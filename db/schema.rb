@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2019_07_09_133828) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "ice_cream_orders", force: :cascade do |t|
     t.integer "quantity"
-    t.integer "icecream_id"
-    t.integer "order_id"
+    t.bigint "ice_cream_id"
+    t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["icecream_id"], name: "index_ice_cream_orders_on_icecream_id"
+    t.index ["ice_cream_id"], name: "index_ice_cream_orders_on_ice_cream_id"
     t.index ["order_id"], name: "index_ice_cream_orders_on_order_id"
   end
 
@@ -30,7 +33,7 @@ ActiveRecord::Schema.define(version: 2019_07_09_133828) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.float "total_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -45,4 +48,7 @@ ActiveRecord::Schema.define(version: 2019_07_09_133828) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "ice_cream_orders", "ice_creams"
+  add_foreign_key "ice_cream_orders", "orders"
+  add_foreign_key "orders", "users"
 end
