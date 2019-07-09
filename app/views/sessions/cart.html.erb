@@ -1,6 +1,6 @@
 <br><br>
-<% @flavors.map do |flavor| %>
-    <h4> <%=flavor%> </h4>
+<% @cart_creams.map do |ic| %>
+    <h4> <%=ic.flavor%> </h4>
 <% end %>
 
 <%= button_to 'checkout', checkout_path, method: :get%> 
