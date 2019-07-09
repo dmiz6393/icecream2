@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Icecreampart2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <% if logged_in?%> 
+    Hello <%= @current_user.name%>! <%=link_to 'log out', logout_path {method:'delete'}%> 
+    <%else%> 
+    <%= link_to 'log in', login_path%> or <%=link_to 'sign up',new_user_path%>
+    <%end%> 
+
+    <% if flash[:errors]%> 
+      <% flash[:errors].each do |error| %> 
+        <%=error%>
+        <% end %> 
+      <%end%> 
+        <% if flash[:notice]%>
+          <%=notice%>  
+        
+      <%end%> 
+      <%= link_to "My cart", '/sessions/cart'%>  
+    <%= yield %>
+  </body>
+</html>

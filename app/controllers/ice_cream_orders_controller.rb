@@ -1,0 +1,2 @@
+class IceCreamOrdersController < ApplicationController
+end

@@ -1,0 +1,12 @@
+<h2> Choose your icecream!</h2>
+<% @icecreams.each do |icecream| %>
+    <div>
+    <%= icecream.flavor %>  £<%= icecream.price %>
+    </div>
+ <% end %>
+
+ <%= form_tag('/add_ice_cream',method:"post") do %>
+
+  <%= collection_select :ice_cream, :id, IceCream.all, :id, :flavor %>
+  <input type=submit value='Add to cart'>
+<% end %>
