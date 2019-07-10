@@ -10,10 +10,12 @@
   </head>
 
   <body>
+  
   <% if logged_in?%> 
-    Hello <%= @current_user.name%>! <%=link_to 'log out', logout_path {method:'delete'}%> 
+    Hello <%= @current_user.name%>! <%=link_to 'Log out', logout_path {method:'delete'}%> 
+    <%= link_to 'See all of your previous orders', orders_path %> 
     <%else%> 
-    <%= link_to 'log in', login_path%> or <%=link_to 'sign up',new_user_path%>
+    <%= link_to 'Log in', login_path%> or <%=link_to 'Sign up',new_user_path%>
     <%end%> 
 
     <% if flash[:errors]%> 

@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+ body { 
+    padding-top: 80px; 
+    font-family: Arvo; 
+    background-image: url(/assets/homepage/background.jpg); 
+    background-size: cover;
+  }
+
+  .button{
+    margin: 5px;
+    color: #bbbbbb;
+    width: 200px;
+    height: 100px;
+    /*add any other properties you want to style*/
+  }

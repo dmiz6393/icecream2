@@ -1,0 +1,10 @@
+<h2> All of your previous orders </h2>
+<% @my_orders.each do |order| %>
+   <div>
+   £<%= order.total_price %>
+   <%= order.ice_cream.flavor %>
+   </div>
+<% end %>
+
+
+
