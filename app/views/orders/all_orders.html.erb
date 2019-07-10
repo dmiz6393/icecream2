@@ -1,7 +1,7 @@
 <h2> All previous orders </h2>
 <% @orders.each do |order| %>
    <div>
-  £<%= order.total_price %>
+  <%= order.user.name %> £<%= order.total_price %>
    <% order.ice_creams.each do |icecream| %>
     <%= icecream.flavor%> 
     <%end%> 
