@@ -2,6 +2,7 @@
 
 <% @cart_ices.map do |ic| %>
     <h4> <%=ic.flavor%>  £<%=ic.price%> </h4>
+
 <% end %>
 
 <%= button_to 'checkout', checkout_path, method: :get%> 
