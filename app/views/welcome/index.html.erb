@@ -1,4 +1,31 @@
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h5 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('/assets/homepage/background.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+</style>
+<body>
 
-<h1>What the scoop!?</h1>
-<h2>Ice cream delivered to your door in minutes</h2>
+<div class="bgimg w3-display-container w3-text-white">
+  <div class="w3-display-middle w3-jumbo">
+    <p>What the scoop!?</p>
+  </div>
+  <div class="w3-display-topleft w3-container w3-xlarge">
+   <p> <button class="w3-button w3-orange"> <%=link_to 'Log in', login_path%> </button></p>
+    <p><button class="w3-button w3-orange"> <%= link_to 'Signup', new_user_path%> </button></p>
+  </div>
+  <div class="w3-display-bottomleft w3-container">
+    <p class="w3-xlarge">The best tasting ice cream delivered to your door</p>
+    <p class="w3-large">London</p>
+  </div>
+</div>
 

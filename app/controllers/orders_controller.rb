@@ -15,7 +15,6 @@ class OrdersController < ApplicationController
         redirect_to order_path(@order)
     end 
 
-
     def show
        @order= Order.find params[:id]
        @cart_ices = current_cart.map { |ic_id| IceCream.find(ic_id) }

@@ -1,5 +1,7 @@
 class IceCreamsController < ApplicationController
     
+    before_action :authorize_user
+
     def index
         @icecreams=IceCream.all
     end 
