@@ -2,7 +2,10 @@
 <% @my_orders.each do |order| %>
    <div>
    £<%= order.total_price %>
-   <%= order.ice_cream.flavor %>
+   <% order.ice_creams.each do |icecream| %>
+   <%= icecream.flavor%>
+   <%end%>
+
    </div>
 <% end %>
 

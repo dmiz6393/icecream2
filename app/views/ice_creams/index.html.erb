@@ -2,12 +2,12 @@
 <% @icecreams.each do |icecream| %>
     <div>
     <%= icecream.flavor %>  £<%= icecream.price %>
-    
+    <%= button_to "Add to Cart", "/add_ice_cream", params: {id: icecream.id}, method: :post %>
     </div>
  <% end %>
 
- <%= form_tag('/add_ice_cream',method:"post") do %>
+ <%# <%= form_tag("/add_ice_cream", method:"post") do %>
 
-  <%= collection_select :ice_cream, :id, IceCream.all, :id, :flavor %>
-  <input type=submit value='Add to cart'>
-<% end %>
+  <%# <%= collection_select :ice_cream, :id, IceCream.all, :id, :flavor %> 
+  <%# <input type=submit value='Add to cart'> %> 
+<%# <% end %> 

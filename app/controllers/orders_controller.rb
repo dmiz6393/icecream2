@@ -6,25 +6,15 @@ class OrdersController < ApplicationController
         @cart_creams = current_cart.map { |ic_id| IceCream.find(ic_id) }
     end
 
-    def checkout
 
+    def checkout
         @user_id= @current_user.id
         @order= Order.create(user_id: @user_id) 
         current_cart.each { |ic_id| IceCreamOrder.create(ice_cream_id: ic_id, order_id: @order.id, quantity: 1)}
         totalprice= @order.total_price
         redirect_to order_path(@order)
     end 
-        @order = []
-        user_id = session[:user_id]
-        @cart_creams.each do |ic| 
-        @order << ic
-        end
-    end
 
-
-    def cart_flavors
-        @flavors = @cart_creams.map {|ic| ic.flavor }
-    end
 
     def show
        @order= Order.find params[:id]
@@ -33,8 +23,9 @@ class OrdersController < ApplicationController
 
 
     def index
-        @my_orders = Order.find_by(user_id: @current_user.id)
+        @my_orders = Order.all.where(user_id: @current_user.id)
     end 
+
 
     def all_orders
         @orders=Order.all 
