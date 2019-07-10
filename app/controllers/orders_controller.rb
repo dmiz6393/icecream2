@@ -13,12 +13,6 @@ class OrdersController < ApplicationController
         current_cart.each { |ic_id| IceCreamOrder.create(ice_cream_id: ic_id, order_id: @order.id, quantity: 1)}
         totalprice= @order.total_price
         redirect_to order_path(@order)
-    end 
-        @order = []
-        user_id = session[:user_id]
-        @cart_creams.each do |ic| 
-        @order << ic
-        end
     end
 
 

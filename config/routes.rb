@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   get '/logout', to:'sessions#destroy', as: :logout
   get '/orders/:id', to:'sessions#cart_destroy'
   get '/allorders/', to:'orders#all_orders', as: :all_orders 
-  root to: 'welcome#index'
+  root to: 'welcome#index', as: :homepage
   resources :users, only: [:new,:create]
-  get '/login', to:'sessions#new', as: :login 
+  get '/login', to:'sessions#new', as: :login
+  post '/login', to: 'sessions#create'
   get '/signup', to: 'users#new', as: :signup
   post '/add_ice_cream' => 'ice_creams#add'
   get '/sessions/cart' => 'sessions#cart', as: :cart
