@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get '/logout', to:'sessions#destroy', as: :logout
   get '/orders/:id', to:'sessions#cart_destroy'
-  get '/allorders/', to:'orders#all_orders', as: :all_orders 
+  get '/allorders', to:'orders#all_orders', as: :all_orders 
   root to: 'welcome#index', as: :homepage
   resources :users, only: [:new,:create]
   get '/login', to:'sessions#new', as: :login

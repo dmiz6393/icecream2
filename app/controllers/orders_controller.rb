@@ -1,7 +1,5 @@
 class OrdersController < ApplicationController
 
-
-
     def cart
         @cart_creams = current_cart.map { |ic_id| IceCream.find(ic_id) }
     end
@@ -27,7 +25,7 @@ class OrdersController < ApplicationController
 
 
     def index
-        @my_orders = Order.find_by(user_id: @current_user.id)
+        @my_orders = Order.all.where(user_id: @current_user.id)
     end 
 
     def all_orders
