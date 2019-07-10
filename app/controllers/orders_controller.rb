@@ -1,7 +1,5 @@
 class OrdersController < ApplicationController
 
-
-
     def cart
         @cart_creams = current_cart.map { |ic_id| IceCream.find(ic_id) }
     end
