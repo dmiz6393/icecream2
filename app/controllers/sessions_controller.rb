@@ -17,6 +17,11 @@ class SessionsController < ApplicationController
     end 
 
     def cart
-        @flavors = current_cart.map { |ic_id| IceCream.find(ic_id).flavor }
+        @cart_ices = current_cart.map { |ic_id| IceCream.find(ic_id) }
     end
+
+    def cart_destroy 
+        session.delete(:cart)
+        redirect_to ice_creams_path
+    end 
 end
