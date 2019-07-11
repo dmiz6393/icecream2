@@ -1,8 +1,10 @@
 <br><br>
 
-<% @cart_ices.map do |ic| %>
-    <h4> <%=ic.flavor%>  £<%=ic.price%> </h4>
-
+<% @cart.map do |item_hash| %>
+    <% ice_cream = IceCream.find(item_hash["ice_cream_id"]) %>
+    <h4> <%=ice_cream.flavor%> x <%= item_hash["quantity"] %></h4>
+    <h4> £<%=ice_cream.price%> </h4>
+    <%= button_to 'remove from cart', delete_item_path, params: {item_id: item_hash["item_id"]}, method: :delete%> 
 <% end %>
 
 <%= button_to 'checkout', checkout_path, method: :get%> 
