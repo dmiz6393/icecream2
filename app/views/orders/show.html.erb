@@ -1,6 +1,7 @@
+
 Your ice cream is on the way!
 What you ordered: 
 
-<% @cart_ices.map do |ic| %>
-    <h4> <%=ic.flavor%>  £<%=ic.price%> </h4>
-<% end %>
+<% @my_recent_order.each do |ico|%> 
+    <%=ico.flavor %>
+    <%end%>

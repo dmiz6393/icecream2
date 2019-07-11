@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post '/add_ice_cream' => 'ice_creams#add'
   get '/sessions/cart' => 'sessions#cart', as: :cart
   get '/checkout', to: 'orders#checkout', as: :checkout
+  get '/order/:id', to: 'orders#show', as: :your_order
   resources :orders
   resources :ice_cream_orders
   resources :ice_creams

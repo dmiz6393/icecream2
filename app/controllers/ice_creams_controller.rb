@@ -12,7 +12,7 @@ class IceCreamsController < ApplicationController
         current_cart << { 
             item_id: new_item_id,
             ice_cream_id: params[:id],
-            quantity: 1,
+            quantity: params[:quantity],
         }
 
         redirect_to ice_creams_path
@@ -29,13 +29,6 @@ class IceCreamsController < ApplicationController
         flash[:notice]= "This item has been removed from your cart"
     end
 
-#     def add_ice_cream(ice_cream_id)
-#     current_item = ice_cream_order.find_by(ice_cream_id: ice_cream_id)
-#         if current_item
-#             current_item.quantity += 1
-#         else
-#             current_item = ice_cream_order.build(ice_cream_id: ice_cream_id)
-#         end
-#     current_item
-#     end
+  
+
 end
