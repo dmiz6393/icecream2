@@ -19,18 +19,19 @@
     <button class= "w3-button w3-white"> <%= link_to 'What other people have ordered', all_orders_path %> </button>
     <button class= "w3-button w3-white"> <%= link_to 'My cart', cart_path %>  </button>
     
+    <%else%> 
+     <font color="white"> <%=link_to "Homepage", homepage_path%> </font>
     
-
     <%end%> 
     <br>
 
     <% if flash[:errors]%> 
       <% flash[:errors].each do |error| %> 
-        <%=error%>
+        <h2> <font color="white"> <%=error%> </font></h2>
         <% end %> 
       <%end%> 
         <% if flash[:notice]%>
-          <%=notice%>  
+          <h2> <font color="white"> <%=notice%> </font> </h2> 
         
       <%end%> 
       
