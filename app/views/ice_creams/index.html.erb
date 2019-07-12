@@ -1,5 +1,26 @@
-<!DOCTYPE html>
+
+
+<h2> Choose your flavor</h2>
+<% @icecreams.each do |icecream| %>
+   <div>
+   <h3> <%= icecream.flavor %> </h3> <h4> £<%= icecream.price %> </h4>
+   </div>
+
+   <p> <%= form_tag('/add_ice_cream', method:'post') do %>
+     <%= hidden_field_tag :id, icecream.id %>
+     <%= number_field_tag :quantity, "1", in: 1...10 %>
+     <%= submit_tag 'Add to Cart' %> </p>
+   <% end %>
+
+<% end %>
+
+
+
+
 <html>
+
+
+
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +29,14 @@
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 .w3-bar-block .w3-bar-item {padding:20px}
+
+body { 
+    padding-top: 80px; 
+    font-family: Arvo; 
+    background-image: url('/assets/homepage/pink.jpg'); 
+    background-size: cover;
+  }
+
 </style>
 <body>
 
@@ -55,6 +84,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     </div>
   </div>
 
+
   <!-- Second Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">
     <div class="w3-quarter">
@@ -63,16 +93,16 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     </div>
 
     <div class="w3-quarter">
-      <img src="assets/ice_cream/vanilla.jpg" alt="vanilla" style="width:100%">
-      <h3><font color="white"> Can never go wrong with vanilla</font></h3>
+      <img src="assets/ice_cream/choco.jpg" alt="vanilla" style="width:100%">
+      <h3><font color="white"> Cookies & Cream</font></h3>
     </div>
     <div class="w3-quarter">
-      <img src="assets/ice_cream/cookie.jpg" alt="strawberry" style="width:100%">
+      <img src="assets/ice_cream/cookie.jpg" alt="cookie" style="width:100%">
       <h3><font color="white">Cookie Dough</font></h3>
     </div>
     <div class="w3-quarter">
-      <img src="assets/ice_cream/banana.jpg" alt="bananas" style="width:100%">
-      <h3><font color="white"> Will make you go bananas</font></h3>
+      <img src="assets/ice_cream/cherry.jpg" alt="cherry" style="width:100%">
+      <h3><font color="white"> Cherry </font></h3>
     </div>
   </div>
 
@@ -93,16 +123,3 @@ function w3_close() {
 </body>
 </html>
 
-<h2> Choose your icecream!</h2>
-<% @icecreams.each do |icecream| %>
-   <div>
-   <%= icecream.flavor %>  £<%= icecream.price %>
-   </div>
-
-   <%= form_tag('/add_ice_cream', method:'post') do %>
-     <%= hidden_field_tag :id, icecream.id %>
-     <%= number_field_tag :quantity, "1", in: 1...10 %>
-     <%= submit_tag 'Add to Cart' %>
-   <% end %>
-
-<% end %>

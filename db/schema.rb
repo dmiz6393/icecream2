@@ -16,18 +16,18 @@ ActiveRecord::Schema.define(version: 2019_07_10_085956) do
   enable_extension "plpgsql"
 
   create_table "ice_cream_orders", force: :cascade do |t|
+    t.integer "quantity"
     t.bigint "ice_cream_id"
     t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "quantity"
     t.index ["ice_cream_id"], name: "index_ice_cream_orders_on_ice_cream_id"
     t.index ["order_id"], name: "index_ice_cream_orders_on_order_id"
   end
 
   create_table "ice_creams", force: :cascade do |t|
     t.string "flavor"
-    t.float "price"
+    t.decimal "price", precision: 8, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

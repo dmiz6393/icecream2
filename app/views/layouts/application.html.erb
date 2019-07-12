@@ -12,7 +12,7 @@
   <body>
   
   <% if logged_in?%> 
-    Hello <%= @current_user.name%>! <button class= "w3-button w3-white"> <%=link_to 'Log out', logout_path {method:'delete'}%></button>
+    <h1> Welcome <%= @current_user.name%> </h1> <button class= "w3-button w3-white"> <%=link_to 'Log out', logout_path {method:'delete'}%></button>
     <button class= "w3-button w3-white"> <%= link_to 'All Ice Creams', ice_creams_path %></button>
     <button class= "w3-button w3-white"> <%= link_to 'Your previous orders', orders_path %> </button>
 

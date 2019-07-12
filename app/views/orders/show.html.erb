@@ -1,7 +1,30 @@
 
-Your ice cream is on the way!
-What you ordered: 
+<h1> Your ice cream is on the way! </h1>
+<h3> What you ordered: </h3>
 
 <% @my_recent_order.each do |ico|%> 
-    <%=ico.flavor %>
+    <p> <%=ico.flavor %> </p>
     <%end%>
+
+
+    <html>
+
+
+
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+
+body { 
+    padding-top: 80px; 
+    font-family: Arvo; 
+    background-image: url('/assets/homepage/pink.jpg'); 
+    background-size: cover;
+  }
+
+</style>

@@ -8,9 +8,21 @@
 
 IceCream.destroy_all
 
-choc = IceCream.create(flavor: "chocolate", price: 1.99 )
-vanilla = IceCream.create(flavor: "vanilla", price: 1.99)
-strawb = IceCream.create(flavor: "strawberry", price: 2.50 )
-banan = IceCream.create(flavor: "banana", price: 1.50 )
-rum = IceCream.create(flavor:"rum and raisin", price: 3.00)
-cookie = IceCream.create(flavor: "cookie dough", price: 2.29)
+IceCream.create([
+{flavor: "Chocolate", price: 1.99}, 
+{flavor: "Vanilla", price: 1.99},
+{flavor: "Cookie Dough", price: 2.30},
+{flavor: "Cookies & Cream", price: 2.00},
+{flavor: "Birthday Cake", price: 2.50},
+{flavor: "Caramel", price: 2.00},
+{flavor: "Coffee", price: 1.99},
+{flavor: "Pistachio", price: 2.50},
+{flavor: "Vegan Coconut", price: 3.99},
+{flavor: "Strawberry", price: 1.00},
+{flavor: "Rum and Raison", price: 1.99},
+{flavor: "Mint Chocolate Chip", price: 2.00},
+{flavor: "Rocky Road", price: 2.00},
+{flavor: "Butter Pecan", price: 2.50},
+{flavor: "Rainbow", price: 1.99},
+{flavor: "Cherry", price: 1.50}
+])
