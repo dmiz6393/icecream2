@@ -21,18 +21,17 @@
     
     <%else%> 
      <font color="white"> <%=link_to "Homepage", homepage_path%> </font>
-    
     <%end%> 
     <br>
 
     <% if flash[:errors]%> 
       <% flash[:errors].each do |error| %> 
-        <h2> <font color="white"> <%=error%> </font></h2>
+        <h2> <font color="white"> <%= error %> </font> </h2>
         <% end %> 
       <%end%> 
+
         <% if flash[:notice]%>
-          <h2> <font color="white"> <%=notice%> </font> </h2> 
-        
+          <h2> <font color="white"> <%=notice%> </font> </h2>   
       <%end%> 
       
     <%= yield %>

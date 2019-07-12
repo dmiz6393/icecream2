@@ -8,8 +8,11 @@ class SessionsController < ApplicationController
         if user && user.authenticate(params[:user][:password])
             session[:user_id]=user.id 
             redirect_to ice_creams_path
-        end 
-    end 
+        else
+            flash[:errors] = ["Sorry, that account is not found"]
+            redirect_to login_path
+        end
+    end
 
     def destroy 
         session.delete(:user_id)

@@ -1,25 +1,7 @@
 
-
-<h2> Choose your flavor</h2>
-<% @icecreams.each do |icecream| %>
-   <div>
-   <h3> <%= icecream.flavor %> </h3> <h4> £<%= icecream.price %> </h4>
-   </div>
-
-   <p> <%= form_tag('/add_ice_cream', method:'post') do %>
-     <%= hidden_field_tag :id, icecream.id %>
-     <%= number_field_tag :quantity, "1", in: 1...10 %>
-     <%= submit_tag 'Add to Cart' %> </p>
-   <% end %>
-
-<% end %>
-
-
-
-
 <html>
 
-
+<h3> Scroll down to make your order </h3> 
 
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
@@ -106,6 +88,27 @@ body {
     </div>
   </div>
 
+  <!-- Third Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-quarter">
+      <img src= "assets/ice_cream/cream.jpg" alt="Sandwich" style="width:100%">
+      <h3><font color="white"> Caramel </font></h3>
+    </div>
+
+    <div class="w3-quarter">
+      <img src="assets/ice_cream/coffee.jpg" alt="vanilla" style="width:100%">
+      <h3><font color="white"> Coffee</font></h3>
+    </div>
+    <div class="w3-quarter">
+      <img src="assets/ice_cream/pistachio.jpg" alt="cookie" style="width:100%">
+      <h3><font color="white">Pistachio</font></h3>
+    </div>
+    <div class="w3-quarter">
+      <img src="assets/ice_cream/color.jpg" alt="cherry" style="width:100%">
+      <h3><font color="white"> Vegan Coconut </font></h3>
+    </div>
+  </div>
+
   <!-- End page content -->
 </div>
 
@@ -123,3 +126,16 @@ function w3_close() {
 </body>
 </html>
 
+<h2> Choose your flavor</h2>
+<% @icecreams.each do |icecream| %>
+   <div>
+   <h3> <%= icecream.flavor %> </h3> <h4> £<%= icecream.price %> </h4>
+   </div>
+
+   <p> <%= form_tag('/add_ice_cream', method:'post') do %>
+     <%= hidden_field_tag :id, icecream.id %>
+     <%= number_field_tag :quantity, "1", in: 1...10 %>
+     <%= submit_tag 'Add to Cart' %> </p>
+   <% end %>
+
+<% end %>
